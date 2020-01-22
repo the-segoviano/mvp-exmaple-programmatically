@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    private let leadingMargin: CGFloat   = 25.0  // Or Left Margin
+    private let trailingMargin: CGFloat  = -25.0 // Or Right Margin
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .white
+        
+        
+        
     }
 
 
 }
-
