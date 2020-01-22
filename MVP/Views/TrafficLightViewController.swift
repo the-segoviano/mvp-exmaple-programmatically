@@ -14,6 +14,8 @@ class TrafficLightViewController: UIViewController {
     var yellowLightView: BaseView!
     var greenLightView: BaseView!
     
+    var descriptionLabel: UILabel!
+    
     private let trafficLightPresenter = TrafficLightPresenter(trafficLightService: TrafficLightService())
     
     override func viewDidLoad() {
@@ -31,8 +33,13 @@ class TrafficLightViewController: UIViewController {
         greenLightView.backgroundColor = .green
         greenLightView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                    action: #selector(self.greenLightAction)))
+        descriptionLabel = UILabel()
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.font = UIFont.boldSystemFont(ofSize: descriptionLabel.font.pointSize)
         
         setUpView()
+        
         trafficLightPresenter.setViewDelegate(trafficLightViewDelegate: self)
     }
     
@@ -40,6 +47,8 @@ class TrafficLightViewController: UIViewController {
         view.addSubview(redLightView)
         view.addSubview(yellowLightView)
         view.addSubview(greenLightView)
+        view.addSubview(descriptionLabel)
+        
         redLightView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         redLightView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         redLightView.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -52,6 +61,10 @@ class TrafficLightViewController: UIViewController {
         greenLightView.topAnchor.constraint(equalTo: yellowLightView.bottomAnchor, constant: 20).isActive = true
         greenLightView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         greenLightView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: greenLightView.bottomAnchor, constant: 40).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25.0).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25.0).isActive = true
     }
     
     
@@ -72,7 +85,7 @@ class TrafficLightViewController: UIViewController {
 extension TrafficLightViewController: TrafficLightViewDelegate {
     
     func displayTrafficLight(description: (String)) {
-        print(description)
+        descriptionLabel.text = description
     }
     
 }
