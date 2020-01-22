@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrafficLightViewController.swift
 //  MVP
 //
 //  Created by Luis Segoviano on 22/01/20.
@@ -8,16 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TrafficLightViewController: UIViewController {
     
     var redLightView: BaseView!
     var yellowLightView: BaseView!
     var greenLightView: BaseView!
     
+    private let trafficLightPresenter = TrafficLightPresenter(trafficLightService: TrafficLightService())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        
         redLightView = BaseView()
         redLightView.backgroundColor = .red
         redLightView.addGestureRecognizer(UITapGestureRecognizer(target: self,
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
                                                                    action: #selector(self.greenLightAction)))
         
         setUpView()
+        trafficLightPresenter.setViewDelegate(trafficLightViewDelegate: self)
     }
     
     func setUpView() {
@@ -54,17 +56,29 @@ class ViewController: UIViewController {
     
     
     @objc func redLightAction() {
-        print(" redLightAction ")
+        trafficLightPresenter.trafficLightColorSelected(colorName: "Red")
     }
     
     @objc func yellowLightAction() {
-        print(" yellowLightAction ")
+        trafficLightPresenter.trafficLightColorSelected(colorName: "Yellow")
     }
     
     @objc func greenLightAction() {
-        print(" greenLightAction ")
+        trafficLightPresenter.trafficLightColorSelected(colorName: "Green")
     }
     
-
-
 }
+
+extension TrafficLightViewController: TrafficLightViewDelegate {
+    
+    func displayTrafficLight(description: (String)) {
+        print(description)
+    }
+    
+}
+
+
+protocol TrafficLightViewDelegate: NSObjectProtocol {
+    func displayTrafficLight(description:(String))
+}
+

@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		5E00CD3123D8CEE500EEDB03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD3023D8CEE500EEDB03 /* AppDelegate.swift */; };
 		5E00CD3323D8CEE500EEDB03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD3223D8CEE500EEDB03 /* SceneDelegate.swift */; };
-		5E00CD3523D8CEE500EEDB03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD3423D8CEE500EEDB03 /* ViewController.swift */; };
 		5E00CD3A23D8CEE800EEDB03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E00CD3923D8CEE800EEDB03 /* Assets.xcassets */; };
 		5E00CD3D23D8CEE800EEDB03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E00CD3B23D8CEE800EEDB03 /* LaunchScreen.storyboard */; };
 		5E00CD4623D8D62900EEDB03 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD4523D8D62900EEDB03 /* BaseView.swift */; };
+		5E00CD4923D8DD4800EEDB03 /* TrafficLightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD4823D8DD4800EEDB03 /* TrafficLightService.swift */; };
+		5E00CD4C23D8DD7000EEDB03 /* TrafficLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD4B23D8DD7000EEDB03 /* TrafficLight.swift */; };
+		5E00CD4F23D8DDD700EEDB03 /* TrafficLightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD4E23D8DDD700EEDB03 /* TrafficLightPresenter.swift */; };
+		5E00CD5223D8DE5C00EEDB03 /* TrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E00CD5123D8DE5C00EEDB03 /* TrafficLightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E00CD2D23D8CEE500EEDB03 /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E00CD3023D8CEE500EEDB03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E00CD3223D8CEE500EEDB03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E00CD3423D8CEE500EEDB03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E00CD3923D8CEE800EEDB03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E00CD3C23D8CEE800EEDB03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E00CD3E23D8CEE800EEDB03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E00CD4523D8D62900EEDB03 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		5E00CD4823D8DD4800EEDB03 /* TrafficLightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightService.swift; sourceTree = "<group>"; };
+		5E00CD4B23D8DD7000EEDB03 /* TrafficLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLight.swift; sourceTree = "<group>"; };
+		5E00CD4E23D8DDD700EEDB03 /* TrafficLightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightPresenter.swift; sourceTree = "<group>"; };
+		5E00CD5123D8DE5C00EEDB03 /* TrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		5E00CD2F23D8CEE500EEDB03 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				5E00CD5023D8DE3100EEDB03 /* Views */,
+				5E00CD4D23D8DDC000EEDB03 /* Presenters */,
+				5E00CD4A23D8DD6100EEDB03 /* Models */,
+				5E00CD4723D8DD2700EEDB03 /* DataSource */,
 				5E00CD3023D8CEE500EEDB03 /* AppDelegate.swift */,
 				5E00CD3223D8CEE500EEDB03 /* SceneDelegate.swift */,
-				5E00CD3423D8CEE500EEDB03 /* ViewController.swift */,
 				5E00CD3923D8CEE800EEDB03 /* Assets.xcassets */,
 				5E00CD3B23D8CEE800EEDB03 /* LaunchScreen.storyboard */,
 				5E00CD3E23D8CEE800EEDB03 /* Info.plist */,
 				5E00CD4523D8D62900EEDB03 /* BaseView.swift */,
 			);
 			path = MVP;
+			sourceTree = "<group>";
+		};
+		5E00CD4723D8DD2700EEDB03 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5E00CD4823D8DD4800EEDB03 /* TrafficLightService.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5E00CD4A23D8DD6100EEDB03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E00CD4B23D8DD7000EEDB03 /* TrafficLight.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5E00CD4D23D8DDC000EEDB03 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				5E00CD4E23D8DDD700EEDB03 /* TrafficLightPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		5E00CD5023D8DE3100EEDB03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E00CD5123D8DE5C00EEDB03 /* TrafficLightViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E00CD3523D8CEE500EEDB03 /* ViewController.swift in Sources */,
+				5E00CD4F23D8DDD700EEDB03 /* TrafficLightPresenter.swift in Sources */,
+				5E00CD5223D8DE5C00EEDB03 /* TrafficLightViewController.swift in Sources */,
 				5E00CD3123D8CEE500EEDB03 /* AppDelegate.swift in Sources */,
+				5E00CD4C23D8DD7000EEDB03 /* TrafficLight.swift in Sources */,
+				5E00CD4923D8DD4800EEDB03 /* TrafficLightService.swift in Sources */,
 				5E00CD3323D8CEE500EEDB03 /* SceneDelegate.swift in Sources */,
 				5E00CD4623D8D62900EEDB03 /* BaseView.swift in Sources */,
 			);
